@@ -1,1 +1,1 @@
-# javascript-alarm-clock-with-sound
+# javascript-alarm-clock-with sound
