@@ -89,9 +89,15 @@ snooze.onclick = function() {
     currentM = time.substr(currentH.length + 1, time.length - 8);
     let addM =parseInt( timeAdd.value);
     
-    if (currentM >= "55") {
-      minutes.value = "00";
+    if (currentM >= (60 - addM)) {
+      let mt =   addM - (60 - parseInt(currentM));
+      if (mt <= 9) {
+        minutes.value = "0" + parseInt(currentM + addM);
+      } else {
+        minutes.value = mt;
+      }
       hours.value = parseInt(currentH) + 1;
+
     } else {
       if (parseInt(currentM) + addM <= 9) {
         minutes.value = "0" + parseInt(currentM + addM);
